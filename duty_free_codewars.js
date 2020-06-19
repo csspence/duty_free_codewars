@@ -9,6 +9,12 @@ All inputs will be integers. Please return an integer. Round down.
 */
 
 
-function dutyFree(normPrice, discount, hol){
-
+const dutyFree = (normPrice, discount, hol) => {
+  let saving = normPrice * (discount * .01);
+  let bottles = 0;
+  while(hol > 0) {
+    bottles++;
+    hol = hol - saving;
+  }
+  return bottles - 1;
 }
